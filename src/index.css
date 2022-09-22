@@ -1,13 +1,204 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* Global css */
+/* -------------------------------- */
+/* Custom properties                */
+/* -------------------------------- */
+:root {
+    /* Main colors */
+    --clr-dark: 218 13% 8%;
+    --clr-white: 0 0% 100%;
+    --clr-light: 220 75% 90%;
+    --clr-accent-r: 0 73% 60%;
+    --clr-accent-g: 146 91% 60%;
+    --clr-accent-b: 193 73% 60%;
+
+    /* Font families */
+    --ff-serif: "Trirong", serif;
+    --ff-sans-normal: "Encode Sans", sans-serif;
+    --ff-sans-cond: "Encode Sans Condensed", sans-serif;
+
+    /* Font sizes */
+    --fs-900: clamp(5rem, 7vw + 1rem, 9.375rem);
+    --fs-800: 3.5rem;
+    --fs-700: 1.5rem;
+    --fs-600: 1rem;
+    --fs-500: 1rem;
+    --fs-400: 0.9375rem;
+    --fs-300: 1rem;
+    --fs-200: 0.875rem;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* -------------------------------- */
+/* Reset                            */
+/* -------------------------------- */
+
+/* Box sizing */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    /* border: 1px solid red; */
+}
+
+/* Reset margins */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+figure,
+picture {
+    margin: 0;
+}
+
+/* Un-bold the headings */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+    font-weight: 400;
+}
+
+/* Body set-up */
+body {
+    font-family: var(--ff-sans-normal);
+    font-size: var(--fs-400);
+    /* Dark background with white text by default */
+    background-color: hsl(var(--clr-dark));
+    color: hsl(var(--clr-white));
+    line-height: 1.5; /* slightly bigger than default */
+}
+
+/* -------------------------------- */
+/* Utility classes                  */
+/* -------------------------------- */
+
+.flex {
+    display: flex;
+    /* custom property, and default */
+    gap: var(--gap, 1rem);
+}
+
+.grid {
+    display: grid;
+    /* custom property, and default */
+    gap: var(--gap, 1rem);
+}
+
+.bg-dark {
+    background-color: hsl(var(--clr-dark));
+}
+.bg-white {
+    background-color: hsl(var(--clr-white));
+}
+.bg-light {
+    background-color: hsl(var(--clr-light));
+}
+.bg-accent-r {
+    background-color: hsl(var(--clr-accent-r));
+}
+.bg-accent-g {
+    background-color: hsl(var(--clr-accent-g));
+}
+.bg-accent-b {
+    background-color: hsl(var(--clr-accent-b));
+}
+
+.text-dark {
+    color: hsl(var(--clr-dark));
+}
+.text-white {
+    color: hsl(var(--clr-white));
+}
+.text-light {
+    color: hsl(var(--clr-light));
+}
+.text-accent-r {
+    color: hsl(var(--clr-accent-r));
+}
+.text-accent-g {
+    color: hsl(var(--clr-accent-g));
+}
+.text-accent-b {
+    color: hsl(var(--clr-accent-b));
+}
+
+/* or .flow > * + *  */
+.flow > *:where(:not(:first-child)) {
+    margin-top: var(--flow-space, 1rem);
+}
+
+.flow--space-small {
+    --flow-space: 0.5rem;
+}
+
+.container {
+    /* Adds some padding, and automatic margin, so the content will grow until it reaches 80rem */
+    padding-inline: 2em;
+    margin-inline: auto;
+    max-width: 80rem;
+}
+
+.ff-serif {
+    font-family: var(--ff-serif);
+}
+.ff-sans-cond {
+    font-family: var(--ff-sans-cond);
+}
+.ff-sans-normal {
+    font-family: var(--ff-sans-normal);
+}
+
+.letter-spacing-1 {
+    letter-spacing: 4.75px;
+}
+.letter-spacing-2 {
+    letter-spacing: 2.7px;
+}
+.letter-spacing-3 {
+    letter-spacing: 2.35px;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.bold{
+    font-weight: bold;
+}
+
+.fs-900 {
+    font-size: var(--fs-900);
+}
+.fs-800 {
+    font-size: var(--fs-800);
+}
+.fs-700 {
+    font-size: var(--fs-700);
+}
+.fs-600 {
+    font-size: var(--fs-600);
+}
+.fs-500 {
+    font-size: var(--fs-500);
+}
+.fs-400 {
+    font-size: var(--fs-400);
+}
+.fs-300 {
+    font-size: var(--fs-300);
+}
+.fs-200 {
+    font-size: var(--fs-200);
+}
+
+.fs-900,
+.fs-800,
+.fs-700,
+.fs-600 {
+    line-height: 1.1;
 }

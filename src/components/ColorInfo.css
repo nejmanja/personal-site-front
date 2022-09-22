@@ -1,0 +1,9 @@
+.color-info{
+    flex-grow: 1;
+}
+
+.color-box{
+    padding: 2rem 1rem 1rem 1rem;
+    text-align: right;
+    border: 1px solid hsl(var(--clr-white));
+}
