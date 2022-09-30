@@ -1,6 +1,5 @@
 import React from "react";
 import ColorInfo from "../components/ColorInfo";
-import MainNav from "../components/MainNav";
 import "./DesignSystem.css";
 
 export default function DesignSystem() {
