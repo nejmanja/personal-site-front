@@ -1,47 +1,114 @@
-.main-nav{
+.main-nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-top: 3rem;
-    padding-inline: 6rem;
-    background: linear-gradient(#FFFFFF10, #00000000);
+    /* display: grid;
+    place-items: center;
+    
+    grid-template-columns: 10em minmax(0px, 80vw) 10em; */
+    padding-block: 1rem;
+    background-color: hsl(var(--clr-dark));
+    /* border-bottom: 1px solid hsl(var(--clr-white) / 0.25); */
+
+    position: sticky;
+    top: 0;
 }
 
-.logo{
+.logo {
     height: 50px;
     color: white;
+    justify-self: start;
+    padding-inline: 3rem 1rem;
 }
 
-
-.nav-button{
+.nav-button {
     border: 0;
     background: 0;
     cursor: pointer;
     padding-block: 1rem 0;
-    margin-inline: 2rem;
-    /* border: 1px solid red; */
+    margin-inline: clamp(0.875rem, 2vw ,5rem);
+    text-decoration: none;
 }
 
-.nav-button::after{
+
+.nav-button::after {
     display: block;
-    content: '';
+    content: "";
     margin-top: 1rem;
     width: 20px;
-    border-bottom: 3px solid hsl(var(--clr-white) / .25);
+    border-bottom: 3px solid hsl(var(--clr-white) / 0.25);
     transition: width 300ms ease-in-out;
 }
 
-.nav-button:hover::after{
+.nav-button:hover::after {
     width: 100%;
+    border-bottom: 3px solid hsl(var(--clr-white));
+}
+.nav-button.active::after {
+    border-bottom: 3px solid hsl(var(--clr-white));
+    width: 100%;
+}
+
+.nav-button--r:hover::after {
+    border-bottom: 3px solid hsl(var(--clr-accent-r));
+}
+.nav-button--r.active::after {
+    border-bottom: 3px solid hsl(var(--clr-accent-r));
+    width: 100%;
+}
+
+.nav-button--g:hover::after {
+    border-bottom: 3px solid hsl(var(--clr-accent-g));
+}
+.nav-button--g.active::after {
+    border-bottom: 3px solid hsl(var(--clr-accent-g));
+    width: 100%;
+}
+.nav-button--b:hover::after {
+    border-bottom: 3px solid hsl(var(--clr-accent-b));
+}
+.nav-button--b.active::after {
+    border-bottom: 3px solid hsl(var(--clr-accent-b));
+    width: 100%;
+}
+
+.contact-button {
+    border: 0;
+    background: 0;
+    cursor: pointer;
+    padding-block: 1rem;
+    position: relative;
+    white-space: nowrap;
+    margin-inline-end: 3rem;
+    text-decoration: none;
+}
+
+.contact-button::after {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    content: "";
+    width: 100%;
+    border-bottom: 3px solid hsl(var(--clr-light) / .25);
+    transform: scaleX(100%);
+    transition: transform 300ms ease-in-out;
+}
+.contact-button.active::after{
+    transform: scaleX(133%);
+    border-bottom: 3px solid hsl(var(--clr-light));
+
+}
+
+.contact-button:hover::after {
+    transform: scaleX(133%);
     border-bottom: 3px solid hsl(var(--clr-light));
 }
 
-.nav-button--r:hover::after{
-    border-bottom: 3px solid hsl(var(--clr-accent-r));
-}
-.nav-button--g:hover::after{
-    border-bottom: 3px solid hsl(var(--clr-accent-g));
-}
-.nav-button--b:hover::after{
-    border-bottom: 3px solid hsl(var(--clr-accent-b));
+@media(max-width: 45em){
+    .main-nav{
+        position: inherit;
+    }
+    .nav-button, .contact-button{
+        display: none;
+    }
 }

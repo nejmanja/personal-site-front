@@ -5,14 +5,13 @@ import "./DesignSystem.css";
 
 export default function DesignSystem() {
     return (
-        <>
-            <MainNav />
+        <div className="page">
             <div className="design-system container flow">
                 <h1>Design system</h1>
                 <h2 className="uppercase ff-sans-cond fs-700 numbered-title">
                     <span>01</span> colors
                 </h2>
-                <div className="flex">
+                <div className="flex" style={{maxWidth:"80vw", flexWrap:"wrap"}}>
                     <ColorInfo
                         type="dark"
                         hex="#131416"
@@ -160,6 +159,6 @@ export default function DesignSystem() {
                     </div>
                 </div>
             </div>
-        </>
+        </div>
     );
 }

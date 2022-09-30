@@ -4,7 +4,7 @@
 /* -------------------------------- */
 :root {
     /* Main colors */
-    --clr-dark: 218 13% 8%;
+    --clr-dark: 218 13% 10%;
     --clr-white: 0 0% 100%;
     --clr-light: 220 75% 90%;
     --clr-accent-r: 0 73% 60%;
@@ -36,7 +36,7 @@
 *::before,
 *::after {
     box-sizing: border-box;
-    /* border: 1px solid red; */
+    
 }
 
 /* Reset margins */
@@ -71,6 +71,7 @@ body {
     background-color: hsl(var(--clr-dark));
     color: hsl(var(--clr-white));
     line-height: 1.5; /* slightly bigger than default */
+    min-height: 100vh; /* fills up entire screen for small pages */
 }
 
 /* -------------------------------- */

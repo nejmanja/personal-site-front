@@ -1,10 +1,19 @@
 import "./App.css";
+import MainNav from "./components/MainNav";
 import DesignSystem from "./pages/DesignSystem";
 
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import Homepage from "./pages/Homepage";
 function App() {
     return (
         <div className="App">
-            <DesignSystem />
+            <BrowserRouter>
+                <MainNav />
+                <Routes>
+                    <Route path="/design" element={<DesignSystem />} />
+                    <Route index element={<Homepage />} />
+                </Routes>
+            </BrowserRouter>
         </div>
     );
 }
