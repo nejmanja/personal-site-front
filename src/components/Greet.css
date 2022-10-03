@@ -1,7 +1,12 @@
-.greet{
-    display: flex;
-    flex: 1 1 auto;
+.greet {
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-block: 5rem;
+    position: relative;
+}
+
+.main-title{
+    position: absolute;
+    z-index: 1;
+    text-shadow: 4px 4px hsl(var(--clr-dark));
 }

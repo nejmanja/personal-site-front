@@ -10,8 +10,11 @@
     background-color: hsl(var(--clr-dark));
     /* border-bottom: 1px solid hsl(var(--clr-white) / 0.25); */
 
-    position: sticky;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
     top: 0;
+    left: 0;
 }
 
 .logo {
@@ -105,9 +108,6 @@
 }
 
 @media(max-width: 45em){
-    .main-nav{
-        position: inherit;
-    }
     .nav-button, .contact-button{
         display: none;
     }

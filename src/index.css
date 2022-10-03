@@ -144,6 +144,11 @@ body {
     max-width: 80rem;
 }
 
+.fullscreen-panel{
+    /* fill up 100% of the container, which takes up the whole screen */
+    height: 100vh;
+}
+
 .ff-serif {
     font-family: var(--ff-serif);
 }
