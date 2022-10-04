@@ -4,23 +4,23 @@ import { Canvas, useFrame } from "react-three-fiber";
 import { useRef } from "react";
 
 function Box() {
+
 	const ref = useRef();
 
 	useFrame((state, delta) => (ref.current.rotation.x += 0.01));
 
 	return (
 		<mesh ref={ref} rotation={[45, 45, 0]}>
-			<boxGeometry attach="geometry" />
-			<meshLambertMaterial attach="material" color="hotpink" />
+			<icosahedronGeometry attach="geometry" args={[1.75, 0]}/>
+			<meshLambertMaterial wireframe wireframeLinewidth={2} attach="material" color="lightgrey" /> 
 		</mesh>
 	);
 }
 
 function Scene() {
 	return (
-		<Canvas style={{ height: "100vh" }}>
+		<Canvas className="canvas" style={{ height: "100vh" }}>
 			<ambientLight intensity={0.5} />
-			<spotLight position={[10, 15, 10]} angle={0.3} />
 			<Box />
 		</Canvas>
 	);

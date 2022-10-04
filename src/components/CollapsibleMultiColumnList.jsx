@@ -16,7 +16,7 @@ export default function MultiColumnList({ title, numCols, items }) {
 					expand((prev) => !prev);
 				}}
 			>
-				<h1 className="fs-700 uppercase ff-sans-cond">{title}</h1>
+				<h1 className="fs-500 uppercase ff-sans-cond">{title}</h1>
 				<h1>{expanded ? "X" : "V"}</h1>
 			</div>
 

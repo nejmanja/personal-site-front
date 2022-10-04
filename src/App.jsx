@@ -6,7 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Homepage from "./pages/Homepage";
 function App() {
     return (
-        <div className="App">
+        <div className="App fs-400">
             <BrowserRouter>
                 <MainNav />
                 <Routes>

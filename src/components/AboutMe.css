@@ -1,35 +1,47 @@
 #about-me {
-	place-content: center;
-	background-color: hsl(var(--clr-light) / 0.05);
+	display: grid;
+	background-color: hsl(var(--clr-less-dark));
+	grid-template-columns: 1fr 4fr 6fr 1fr;
+	grid-template-areas:
+		". image title ."
+		". image content ."
+		". image skills ."
+		". image contact .";
+	place-items: center;
+	gap: 3em;
+
+	padding-block: 5rem;
 }
 
-#about-me > .grid {
-    margin-block-start: 8rem;
-	grid-template-columns: 25% 75%;
-	justify-items: center;
+.about-title {
+	grid-area: title;
 }
 
 .profile-pic {
-	object-fit: cover;
-	aspect-ratio: 1 / 1;
 	width: 100%;
+	aspect-ratio: 1/1;
+	object-fit: cover;
 	border-radius: 50%;
-    margin-block-start: 4rem;
+	grid-area: image;
+	align-self: start;
+
+	box-shadow: var(--shadow-dark);
 }
 
 .about-text {
-	margin-inline-start: 4rem;
-	max-width: 80ch;
-    margin-block-end: 2rem;
+	grid-area: content;
+	text-align: justify;
 }
 
-.about-desc{
-    text-indent: 2rem;
+.about-skills {
+	width: 100%;
+	grid-area: skills;
 }
-
-.tagline {
-    padding-bottom: 2rem;
-    margin-bottom: 2rem;
+.about-contact {
+	grid-area: contact;
+}
+.about-desc {
+	text-indent: 2rem;
 }
 
 .tagline::after {
@@ -42,34 +54,32 @@
 	background-color: white;
 }
 
-.skill-item {
-	place-content: space-between;
+@media (max-width: 70em) {
+	#about-me {
+		grid-template-areas:
+			". image title ."
+			". image content ."
+			". skills skills ."
+			". contact contact .";
+	}
+    .profile-pic {
+        place-self: center;
+    }
 }
 
-.skill-list {
-	margin-inline-start: 1rem;
-}
-
-.skillset-title::after{
-    content: '';
-    width: 20px;
-    display: block;
-    bottom: 0;
-    left: 0;
-    border-bottom: 3px solid white;
-}
-
-.skillset-title--r::after{
-    border-color: hsl(var(--clr-accent-r));
-}
-.skillset-title--g::after{
-    border-color: hsl(var(--clr-accent-g));
-}
-.skillset-title--b::after{
-    border-color: hsl(var(--clr-accent-b));
-}
-
-.skillset-header{
-    align-items: center;
-    padding-block-end: 0.5rem;
+@media (max-width: 45em) {
+	#about-me {
+		grid-template-columns: 1fr 20fr 1fr;
+		grid-template-areas:
+			". title ."
+			". image ."
+			". content ."
+			". skills ."
+			". contact .";
+		place-items: center;
+		gap: 2em;
+	}
+    .profile-pic {
+        width: 70%;
+    }
 }

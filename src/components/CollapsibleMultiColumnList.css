@@ -36,3 +36,9 @@
 		hsl(var(--clr-accent-b)) 67%
 	);
 }
+
+@media (max-width: 45em){
+    .lists{
+	    grid-template-columns: 1fr;
+    }
+}

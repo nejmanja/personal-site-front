@@ -5,11 +5,12 @@
 :root {
 	/* Main colors */
 	--clr-dark: 218 13% 10%;
+	--clr-less-dark: 218 13% 20%;
 	--clr-white: 0 0% 100%;
-	--clr-light: 220 75% 90%;
+	--clr-light: 201 82% 78%;
 	--clr-accent-r: 0 73% 60%;
 	--clr-accent-g: 146 91% 60%;
-	--clr-accent-b: 193 73% 60%;
+	--clr-accent-b: 193 85% 53%;
 
 	/* Font families */
 	--ff-serif: "Trirong", serif;
@@ -18,13 +19,17 @@
 
 	/* Font sizes */
 	--fs-900: clamp(5rem, 7vw + 1rem, 9.375rem);
-	--fs-800: 3.5rem;
-	--fs-700: 1.5rem;
-	--fs-600: 1.25rem;
-	--fs-500: 1rem;
-	--fs-400: 0.9375rem;
+	--fs-800: 3.25rem;
+	--fs-700: 2rem;
+	--fs-600: 1.75rem;
+	--fs-500: 1.5rem;
+	--fs-400: clamp(0.75rem, 1vw + 0.75rem, 1.25rem);
 	--fs-300: 1rem;
 	--fs-200: 0.875rem;
+
+    --line-thick: 3px;
+
+    --shadow-dark: 4px 4px hsl(var(--clr-dark));
 }
 
 /* -------------------------------- */
