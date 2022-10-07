@@ -12,7 +12,7 @@ function Box() {
 	return (
 		<mesh ref={ref} rotation={[45, 45, 0]}>
 			<icosahedronGeometry attach="geometry" args={[1.75, 0]}/>
-			<meshLambertMaterial wireframe wireframeLinewidth={2} attach="material" color="lightgrey" /> 
+			<meshLambertMaterial wireframe attach="material" color="lightgrey" /> 
 		</mesh>
 	);
 }
