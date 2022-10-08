@@ -18,7 +18,7 @@ export default function AboutMe() {
             <h1 className={headerStyle}>Who am I?</h1>
             <div className={`${styles.aboutText} ${utilStyles.flow}`}>
                 <p className={`${styles.aboutDesc} ${utilStyles.fs400}`}>
-                    I'm a computer science student with strong interests in
+                    I&apos;m a computer science student with strong interests in
                     low-level programming, computer graphics, physics
                     simulations, digital signal processing and audio
                     programming.

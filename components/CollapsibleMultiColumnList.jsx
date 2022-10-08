@@ -9,7 +9,7 @@ export default function MultiColumnList({ title, numCols, items }) {
     const [expanded, expand] = useState(false);
     const contentRef = useRef();
 
-    const listItems = items.map((item) => <div>{item}</div>);
+    const listItems = items.map((item, ind) => <div key={ind}>{item}</div>);
     return (
         <div className={styles.listContainer}>
             <div

@@ -54,6 +54,7 @@ export default function Skills({ className }) {
                             ["Java", 4],
                             ["C#", 4],
                         ]}
+                        key={0}
                     />,
                     <SkillSet
                         title="Computer Graphics"
@@ -63,6 +64,7 @@ export default function Skills({ className }) {
                             ["Unity 3D", 5],
                             ["OpenGL", 4],
                         ]}
+                        key={1}
                     />,
                     <SkillSet
                         title="Low-Level Programming"
@@ -73,6 +75,7 @@ export default function Skills({ className }) {
                             ["RISC-V", 3],
                             ["Z80", 3],
                         ]}
+                        key={2}
                     />,
                     <SkillSet
                         title="Web"
@@ -83,6 +86,7 @@ export default function Skills({ className }) {
                             ["CSS", 4],
                             ["MongoDB", 3],
                         ]}
+                        key={3}
                     />,
                     <SkillSet
                         title="Other Programming"
@@ -92,6 +96,7 @@ export default function Skills({ className }) {
                             ["JUCE API", 4],
                             ["OpenCL", 3],
                         ]}
+                        key={4}
                     />,
                     <SkillSet
                         title="Audio Production"
@@ -101,6 +106,7 @@ export default function Skills({ className }) {
                             ["Ableton Live", 4],
                             ["FL Studio", 4],
                         ]}
+                        key={5}
                     />,
                     <SkillSet
                         title="Visuals"
@@ -110,6 +116,7 @@ export default function Skills({ className }) {
                             ["TouchDesigner", 4],
                             ["3DS Max", 4],
                         ]}
+                        key={6}
                     />,
                 ]}
             />
@@ -126,6 +133,7 @@ export default function Skills({ className }) {
                             ["Numerical Methods"],
                             ["GPGPU"],
                         ]}
+                        key={0}
                     />,
                     <SkillSet
                         title="Music"
@@ -136,10 +144,12 @@ export default function Skills({ className }) {
                             ["Composition"],
                             ["Audio-Visual interaction"],
                         ]}
+                        key={1}
                     />,
                     <SkillSet
                         title="Other"
                         skillDesc={[["Crochet"], ["Origami"]]}
+                        key={2}
                     />,
                 ]}
             />
