@@ -1,86 +1,82 @@
 .aboutMe {
-	display: grid;
-	background-color: hsl(var(--clr-less-dark));
-	grid-template-columns: 1fr 4fr 6fr 1fr;
-	grid-template-areas:
-		". image title ."
-		". image content ."
-		". image skills ."
-		". image contact .";
-	place-items: center;
-	gap: 3em;
-
-	padding-block: 5rem;
-
+    background-color: hsl(var(--clr-less-dark));
+    padding-block: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     min-height: 100vh;
 }
 
-.aboutTitle {
-	grid-area: title;
+.content {
+    display: grid;
+    grid-template-columns: 4fr 6fr;
+    grid-template-rows: max-content max-content max-content;
+
+    grid-template-areas:
+        "image title"
+        "image content"
+        "skills skills"
+        "contact contact";
+    align-items: start;
+    justify-items: center;
+    gap: 3em;
+
+}
+
+.title {
+    grid-area: title;
+    align-self: center;
 }
 
 .profilePic {
-	width: 100%;
-	aspect-ratio: 1/1;
-	object-fit: cover;
-	border-radius: 50%;
-	grid-area: image;
-	align-self: start;
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 50%;
+    grid-area: image;
+    align-self: start;
 
-	box-shadow: var(--shadow-dark);
-}
-
-.aboutText {
-	grid-area: content;
-	text-align: justify;
+    box-shadow: var(--shadow-dark);
 }
 
-.aboutSkills {
-	width: 100%;
-	grid-area: skills;
+.text {
+    grid-area: content;
+    text-align: justify;
 }
-.aboutContact {
-	grid-area: contact;
+
+.skills {
+    width: 100%;
+    grid-area: skills;
+    align-items: start;
 }
-.aboutDesc {
-	text-indent: 2rem;
+.contact {
+    grid-area: contact;
+}
+.desc {
+    text-indent: 2rem;
 }
 
 .tagline::after {
-	content: "";
-	display: block;
-	bottom: 0;
-	width: 50%;
-	height: 1px;
-	margin-block-start: 20px;
-	background-color: white;
-}
-
-@media (max-width: 70em) {
-	.aboutMe {
-		grid-template-areas:
-			". image title ."
-			". image content ."
-			". skills skills ."
-			". contact contact .";
-	}
-    .profilePic {
-        place-self: center;
-    }
+    content: "";
+    display: block;
+    bottom: 0;
+    width: 50%;
+    height: 1px;
+    margin-block-start: 20px;
+    background-color: white;
 }
 
 @media (max-width: 45em) {
-	.aboutMe {
-		grid-template-columns: 1fr 20fr 1fr;
-		grid-template-areas:
-			". title ."
-			". image ."
-			". content ."
-			". skills ."
-			". contact .";
-		place-items: center;
-		gap: 2em;
-	}
+    .content {
+        grid-template-columns: 20fr;
+        grid-template-areas:
+            "title"
+            "image"
+            "content"
+            "skills"
+            "contact";
+        gap: 2em;
+    }
     .profilePic {
         width: 70%;
     }

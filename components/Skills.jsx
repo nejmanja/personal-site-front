@@ -43,7 +43,7 @@ export default function Skills({ className }) {
         <div className={`${styles.skills} ${className}`}>
             <MultiColumnList
                 title="Skills"
-                numCols={2}
+                numCols={3}
                 items={[
                     <SkillSet
                         title="OOP"
