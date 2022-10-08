@@ -1,0 +1,44 @@
+.listContainer {
+	position: relative;
+}
+
+.lists {
+	--gap: 2rem;
+	grid-template-columns: repeat(var(--num-cols, 2), 1fr);
+	width: 100%;
+	transition: height 0.4s ease-in-out;
+	overflow: hidden;
+}
+
+.lists_active {
+	transition: height 0.4s ease-in-out;
+}
+
+.listTitle {
+    position: relative;
+    justify-content: space-between;
+	cursor: pointer;
+	padding-block: 1rem;
+	margin-block: 1rem;
+}
+
+.listTitle::after {
+	content: "";
+    position: absolute;
+    bottom: 0;
+	width: 100%;
+	height: 3px;
+	background: linear-gradient(
+		to right,
+		hsl(var(--clr-accent-r)) 33%,
+		hsl(var(--clr-accent-g)) 33%,
+		hsl(var(--clr-accent-g)) 67%,
+		hsl(var(--clr-accent-b)) 67%
+	);
+}
+
+@media (max-width: 45em){
+    .lists{
+	    grid-template-columns: 1fr;
+    }
+}

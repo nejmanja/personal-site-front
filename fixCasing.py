@@ -9,7 +9,8 @@ def main():
     lines = target.readlines()
     target.close()
     for i in range(0, len(lines)):
-        if lines[i][0] == '.':
+        #include tabbed out lines
+        if lines[i].strip() != "" and lines[i].strip()[0] == '.':
             while True:
                 ind = lines[i].find('-')
                 # if not found or last char of string (wouldn't make sense)

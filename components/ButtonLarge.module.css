@@ -1,0 +1,21 @@
+.buttonLarge {
+    display: block;
+    width: max-content;
+	text-decoration: none;
+	color: hsl(var(--clr-white) / 0.5);
+	cursor: pointer;
+	border: var(--line-thick) solid hsl(var(--clr-white) / 0.5);
+	transition: border-color 300ms ease-in-out, color 300ms ease-in-out;
+	padding: 1rem;
+}
+
+.buttonLarge:hover,
+.buttonLarge:focus {
+	border-color: hsl(var(--clr-white));
+	color: hsl(var(--clr-white));
+}
+
+.buttonLarge_light {
+	color: hsl(var(--clr-light));
+	border-color: hsl(var(--clr-light));
+}

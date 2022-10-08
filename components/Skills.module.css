@@ -1,0 +1,27 @@
+.skillItem {
+	place-content: space-between;
+}
+
+.skillsetTitle::after{
+    content: '';
+    width: 20px;
+    display: block;
+    bottom: 0;
+    left: 0;
+    border-bottom: 3px solid white;
+}
+
+.skillsetTitle_r::after{
+    border-color: hsl(var(--clr-accent-r));
+}
+.skillsetTitle_g::after{
+    border-color: hsl(var(--clr-accent-g));
+}
+.skillsetTitle_b::after{
+    border-color: hsl(var(--clr-accent-b));
+}
+
+.skillsetHeader{
+    align-items: center;
+    padding-block-end: 0.5rem;
+}

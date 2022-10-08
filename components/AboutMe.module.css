@@ -1,0 +1,87 @@
+.aboutMe {
+	display: grid;
+	background-color: hsl(var(--clr-less-dark));
+	grid-template-columns: 1fr 4fr 6fr 1fr;
+	grid-template-areas:
+		". image title ."
+		". image content ."
+		". image skills ."
+		". image contact .";
+	place-items: center;
+	gap: 3em;
+
+	padding-block: 5rem;
+
+    min-height: 100vh;
+}
+
+.aboutTitle {
+	grid-area: title;
+}
+
+.profilePic {
+	width: 100%;
+	aspect-ratio: 1/1;
+	object-fit: cover;
+	border-radius: 50%;
+	grid-area: image;
+	align-self: start;
+
+	box-shadow: var(--shadow-dark);
+}
+
+.aboutText {
+	grid-area: content;
+	text-align: justify;
+}
+
+.aboutSkills {
+	width: 100%;
+	grid-area: skills;
+}
+.aboutContact {
+	grid-area: contact;
+}
+.aboutDesc {
+	text-indent: 2rem;
+}
+
+.tagline::after {
+	content: "";
+	display: block;
+	bottom: 0;
+	width: 50%;
+	height: 1px;
+	margin-block-start: 20px;
+	background-color: white;
+}
+
+@media (max-width: 70em) {
+	.aboutMe {
+		grid-template-areas:
+			". image title ."
+			". image content ."
+			". skills skills ."
+			". contact contact .";
+	}
+    .profilePic {
+        place-self: center;
+    }
+}
+
+@media (max-width: 45em) {
+	.aboutMe {
+		grid-template-columns: 1fr 20fr 1fr;
+		grid-template-areas:
+			". title ."
+			". image ."
+			". content ."
+			". skills ."
+			". contact .";
+		place-items: center;
+		gap: 2em;
+	}
+    .profilePic {
+        width: 70%;
+    }
+}
