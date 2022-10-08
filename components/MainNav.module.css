@@ -1,0 +1,122 @@
+.mainNav {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	/* display: grid;
+    place-items: center;
+    
+    grid-template-columns: 10em minmax(0px, 80vw) 10em; */
+	padding-block: 1rem;
+	background-color: hsl(var(--clr-dark));
+	/* border-bottom: 1px solid hsl(var(--clr-white) / 0.25); */
+
+	position: fixed;
+	width: 100%;
+	z-index: 1000;
+	top: 0;
+	left: 0;
+}
+
+.logo {
+	height: 50px;
+	color: white;
+	justify-self: start;
+	padding-inline: 3rem 1rem;
+}
+
+.navButton {
+	border: 0;
+	background: 0;
+	cursor: pointer;
+	padding-block: 1rem 0;
+	margin-inline: clamp(0.875rem, 2vw, 5rem);
+	text-decoration: none;
+}
+
+.navButton::after {
+	display: block;
+	content: "";
+	margin-top: 1rem;
+	width: 20px;
+	border-bottom: 3px solid hsl(var(--clr-white) / 0.25);
+	transition: width 300ms ease-in-out;
+}
+
+.navButton:hover::after {
+	width: 100%;
+	border-bottom: 3px solid hsl(var(--clr-white));
+}
+.navButton.active::after {
+	border-bottom: 3px solid hsl(var(--clr-white));
+	width: 100%;
+}
+
+.navButton_r:hover::after {
+	border-bottom: 3px solid hsl(var(--clr-accent-r));
+}
+.navButton_r.active::after {
+	border-bottom: 3px solid hsl(var(--clr-accent-r));
+	width: 100%;
+}
+
+.navButton_g:hover::after {
+	border-bottom: 3px solid hsl(var(--clr-accent-g));
+}
+.navButton_g.active::after {
+	border-bottom: 3px solid hsl(var(--clr-accent-g));
+	width: 100%;
+}
+.navButton_b:hover::after {
+	border-bottom: 3px solid hsl(var(--clr-accent-b));
+}
+.navButton_b.active::after {
+	border-bottom: 3px solid hsl(var(--clr-accent-b));
+	width: 100%;
+}
+
+.contactButton {
+	border: 0;
+	background: 0;
+	cursor: pointer;
+	padding-block: 1rem;
+	position: relative;
+	white-space: nowrap;
+	margin-inline-end: 3rem;
+	text-decoration: none;
+}
+
+.contactButton::after {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	content: "";
+	width: 100%;
+	border-bottom: 3px solid hsl(var(--clr-light) / 0.25);
+	transform: scaleX(100%);
+	transition: transform 300ms ease-in-out;
+}
+.contactButton.active::after {
+	transform: scaleX(133%);
+	border-bottom: 3px solid hsl(var(--clr-light));
+}
+
+.contactButton:hover::after {
+	transform: scaleX(133%);
+	border-bottom: 3px solid hsl(var(--clr-light));
+}
+
+@media (max-width: 45em) {
+
+	.mainNav {
+		padding-block: 0.5rem;
+	}
+
+    .navButton,
+    .contactButton{
+        display: none;
+    }
+
+	.logo {
+		height: 30px;
+	}
+}
