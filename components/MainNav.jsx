@@ -15,6 +15,10 @@ const navLinks = [
 export default function MainNav() {
     const router = useRouter();
 
+    // makes the code below at least slightly more readable
+    const navButtonStyle = `${styles.navButton} ${utilStyles.textWhite} ${utilStyles.ffSansCond} ${utilStyles.uppercase} ${utilStyles.fs300}`;
+    const contactButtonStyle = `${styles.contactButton} ${utilStyles.textLight} ${utilStyles.ffSansCond} ${utilStyles.letterSpacing3} ${utilStyles.uppercase} ${utilStyles.fs300}`;
+    
     return (
         <nav className={styles.mainNav}>
             <div className={utilStyles.flex}>
@@ -26,11 +30,9 @@ export default function MainNav() {
                 {navLinks.map((linkStruct) => (
                     <Link key={linkStruct.path} href={linkStruct.path}>
                         <a
-                            className={`${styles.navButton} ${
+                            className={`${
                                 linkStruct.accent
-                            } ${utilStyles.textWhite} ${
-                                utilStyles.ffSansCond
-                            } ${utilStyles.uppercase} ${utilStyles.fs300} ${
+                            } ${navButtonStyle} ${
                                 router.pathname === linkStruct.path &&
                                 styles.active
                             }`}
@@ -43,11 +45,7 @@ export default function MainNav() {
 
             <Link href="/contact">
                 <a
-                    className={`${styles.contactButton} ${
-                        utilStyles.textLight
-                    } ${utilStyles.ffSansCond} ${utilStyles.letterSpacing3} ${
-                        utilStyles.uppercase
-                    } ${utilStyles.fs300} ${
+                    className={`${contactButtonStyle} ${
                         router.pathname === "/contact" && styles.active
                     }`}
                 >

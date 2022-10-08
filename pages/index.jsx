@@ -1,7 +1,9 @@
+import Greet from "../components/Greet";
+
 export default function Homepage() {
     return (
-        <div className="">
-            hello
+        <div>
+            <Greet />
         </div>
     );
 }
