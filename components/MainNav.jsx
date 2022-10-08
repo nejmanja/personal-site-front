@@ -3,6 +3,7 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 
 import styles from "./MainNav.module.css";
+import utilStyles from "../styles/utils.module.css";
 
 const navLinks = [
     { title: "Home", path: "/", accent: null },
@@ -16,7 +17,7 @@ export default function MainNav() {
 
     return (
         <nav className={styles.mainNav}>
-            <div className="flex">
+            <div className={utilStyles.flex}>
                 <img
                     className={styles.logo}
                     src="/images/logo.png"
@@ -27,7 +28,9 @@ export default function MainNav() {
                         <a
                             className={`${styles.navButton} ${
                                 linkStruct.accent
-                            } text-white ff-sans-cond uppercase fs-300 ${
+                            } ${utilStyles.textWhite} ${
+                                utilStyles.ffSansCond
+                            } ${utilStyles.uppercase} ${utilStyles.fs300} ${
                                 router.pathname === linkStruct.path &&
                                 styles.active
                             }`}
@@ -40,9 +43,11 @@ export default function MainNav() {
 
             <Link href="/contact">
                 <a
-                    className={`${
-                        styles.contactButton
-                    } text-light ff-sans-cond letter-spacing-3 uppercase fs-300 ${
+                    className={`${styles.contactButton} ${
+                        utilStyles.textLight
+                    } ${utilStyles.ffSansCond} ${utilStyles.letterSpacing3} ${
+                        utilStyles.uppercase
+                    } ${utilStyles.fs300} ${
                         router.pathname === "/contact" && styles.active
                     }`}
                 >
