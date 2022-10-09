@@ -1,60 +1,45 @@
 .carouselItem {
-	position: relative;
-	width: 100%;
+	display: flex;
+    flex-direction: column;
+	/* first row will fit image exactly, no overflow, can be done with flex */
+	/* grid-template-rows: 3fr 1fr; */
+	gap: 1rem;
+	background: hsl(var(--clr-less-dark));
 }
 
-.carouselItemThumb {
-	position: relative;
-	width: 100%;
-	aspect-ratio: 16 / 9;
-	object-fit: cover;
-	border-radius: 1rem;
-    border: var(--line-thick) solid hsl(var(--clr-dark));
+.thumbContainer{
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    position: relative;
+    padding: 0;
+    margin: 0;
 }
 
-.carouselItemTitle {
-    max-width: calc(100% - 3rem);
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    
-	position: absolute;
-	margin: 1.5rem;
-	bottom: 0;
+.thumbContainer::after{
+    position: absolute;
+	content: "";
+	margin-top: 1rem;
+	width: 20px;
+	border-bottom: 3px solid hsl(var(--clr-white));
+	transition: width 300ms ease-in-out;
+    bottom: 0;
 }
-
-.carouselItemTitle::after{
-    content: "";
-    display: block;
-    border-bottom: var(--line-thick) solid hsl(var(--clr-dark));
-    width: 20px;
-    transition: width 300ms ease-in-out;
-}
-
-.carouselItemTitle_active.carouselItemTitle::after{
+.active.thumbContainer::after{
     width: 100%;
 }
 
-.carouselItemTitle_r::after{
-    border-color: hsl(var(--clr-accent-r));   
+.thumbContainer_r.thumbContainer::after{
+	border-color: hsl(var(--clr-accent-r));
 }
-.carouselItemTitle_g::after{
-    border-color: hsl(var(--clr-accent-g));   
+.thumbContainer_g.thumbContainer::after{
+	border-color: hsl(var(--clr-accent-g));
 }
-.carouselItemTitle_b::after{
-    border-color: hsl(var(--clr-accent-b));   
+.thumbContainer_b.thumbContainer::after{
+	border-color: hsl(var(--clr-accent-b));
 }
 
-.carouselItemThumbContainer::after {
-    box-sizing: content-box;
-	content: "";
-	position: absolute;
-	width: 100%;
-	aspect-ratio: 16 / 9;
-	top: 0;
-    left: 0;
-	background-color: hsl(var(--clr-dark) / 0.8);
-    clip-path: polygon(0 60%, 100% 60%, 100% 100%, 0 100%);
-    border-radius: 0 0 1rem 1rem;
-    backdrop-filter: blur(3px);
+.title{
+    place-self: start;
+    padding: 0;
+    margin: 0;
 }
