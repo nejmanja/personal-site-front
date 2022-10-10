@@ -20,6 +20,10 @@
 	cursor: pointer;
 	padding-block: 1rem;
 	margin-block: 1rem;
+    width: 100%;
+    background: none;
+    border: none;
+    color: hsl(var(--clr-white));
 }
 
 .listTitle::after {

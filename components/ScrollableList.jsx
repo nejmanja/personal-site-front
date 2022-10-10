@@ -1,5 +1,6 @@
 import React from "react";
 import { useEffect, useState, useRef } from "react";
+import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 
 import styles from "./ScrollableList.module.css";
 import utilStyles from "../styles/utils.module.css";
@@ -47,7 +48,7 @@ export default function ScrollableList({ listItems }) {
 						scroller.current.scrollLeft -= itemWidth;
 					}}
 				>
-					{"<"}
+					<AiOutlineLeft />
 				</button>
 			)}
 			<div
@@ -63,7 +64,7 @@ export default function ScrollableList({ listItems }) {
 						scroller.current.scrollLeft += itemWidth;
 					}}
 				>
-					{">"}
+					<AiOutlineRight />
 				</button>
 			)}
 		</div>

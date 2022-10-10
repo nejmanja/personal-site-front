@@ -78,6 +78,68 @@ export default function Showcase() {
 					/>,
 				]}
 			/>
+			<ScrollableList
+				listItems={[
+					<CarouselItem
+						title="Sample project"
+						thumbnail="/images/thumb.png"
+						accent="r"
+						link="#"
+					/>,
+					<CarouselItem
+						title="Slightly bigger title"
+						thumbnail="/images/thumb2.jpg"
+						accent="g"
+						link="#"
+					/>,
+					<CarouselItem
+						title="A really elaborate and massive title, you cannnot even comprehend how big it is"
+						thumbnail="/images/thumb3.png"
+						accent="b"
+						link="#"
+					/>,
+					<CarouselItem
+						title="Sample project"
+						thumbnail="/images/thumb3.png"
+						link="#"
+					/>,
+					<CarouselItem
+						title="Sample project"
+						thumbnail="/images/thumb3.png"
+						accent="b"
+						link="#"
+					/>,
+					<CarouselItem
+						title="Sample project"
+						thumbnail="/images/thumb.png"
+						accent="r"
+						link="#"
+					/>,
+					<CarouselItem
+						title="Slightly bigger title"
+						thumbnail="/images/thumb2.jpg"
+						accent="g"
+						link="#"
+					/>,
+					<CarouselItem
+						title="A really elaborate and massive title, you cannnot even comprehend how big it is"
+						thumbnail="/images/thumb3.png"
+						accent="b"
+						link="#"
+					/>,
+					<CarouselItem
+						title="Sample project"
+						thumbnail="/images/thumb3.png"
+						link="#"
+					/>,
+					<CarouselItem
+						title="Sample project"
+						thumbnail="/images/thumb3.png"
+						accent="b"
+						link="#"
+					/>,
+				]}
+			/>
 		</div>
 	);
 }

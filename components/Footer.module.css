@@ -1,0 +1,16 @@
+.footer{
+    background-color: hsl(var(--clr-less-dark));
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+}
+
+.link{
+    text-decoration: none;
+    color: hsl(var(--clr-light));
+    transition: color 300ms;
+}
+
+.link:hover{
+    color: hsl(var(--clr-white));
+}
