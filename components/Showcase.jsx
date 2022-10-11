@@ -5,6 +5,24 @@ import styles from "./Showcase.module.css";
 import utilStyles from "../styles/utils.module.css";
 import ScrollableList from "./ScrollableList";
 
+const sampleProjects = [
+	{ title: "Sample project", thumbnail: "/images/thumb.png", accent: "r" },
+	{
+		title: "Slightly bigger title",
+		thumbnail: "/images/thumb2.jpg",
+		accent: "g",
+	},
+	{
+		title:
+			"A really elaborate and massive title, you cannnot even comprehend how big it is",
+		thumbnail: "/images/thumb3.png",
+		accent: "b",
+	},
+	{ title: "Sample project", thumbnail: "/images/thumb.png", accent: "" },
+	{ title: "Sample project", thumbnail: "/images/thumb2.jpg", accent: "r" },
+	{ title: "Sample project", thumbnail: "/images/thumb3.png", accent: "g" },
+];
+
 export default function Showcase() {
 	return (
 		<div
@@ -17,128 +35,26 @@ export default function Showcase() {
 			</h1>
 			<h2>Check out some of my past projects!</h2>
 			<ScrollableList
-				listItems={[
+				listItems={sampleProjects.map((item, index) => (
 					<CarouselItem
-						title="Sample project"
-						thumbnail="/images/thumb.png"
-						accent="r"
+						key={index}
+						title={item.title}
+						thumbnail={item.thumbnail}
+						accent={item.accent}
 						link="#"
-					/>,
-					<CarouselItem
-						title="Slightly bigger title"
-						thumbnail="/images/thumb2.jpg"
-						accent="g"
-						link="#"
-					/>,
-					<CarouselItem
-						title="A really elaborate and massive title, you cannnot even comprehend how big it is"
-						thumbnail="/images/thumb3.png"
-						accent="b"
-						link="#"
-					/>,
-					<CarouselItem
-						title="Sample project"
-						thumbnail="/images/thumb3.png"
-						link="#"
-					/>,
-					<CarouselItem
-						title="Sample project"
-						thumbnail="/images/thumb3.png"
-						accent="b"
-						link="#"
-					/>,
-					<CarouselItem
-						title="Sample project"
-						thumbnail="/images/thumb.png"
-						accent="r"
-						link="#"
-					/>,
-					<CarouselItem
-						title="Slightly bigger title"
-						thumbnail="/images/thumb2.jpg"
-						accent="g"
-						link="#"
-					/>,
-					<CarouselItem
-						title="A really elaborate and massive title, you cannnot even comprehend how big it is"
-						thumbnail="/images/thumb3.png"
-						accent="b"
-						link="#"
-					/>,
-					<CarouselItem
-						title="Sample project"
-						thumbnail="/images/thumb3.png"
-						link="#"
-					/>,
-					<CarouselItem
-						title="Sample project"
-						thumbnail="/images/thumb3.png"
-						accent="b"
-						link="#"
-					/>,
-				]}
+					/>
+				))}
 			/>
 			<ScrollableList
-				listItems={[
+				listItems={sampleProjects.map((item, index) => (
 					<CarouselItem
-						title="Sample project"
-						thumbnail="/images/thumb.png"
-						accent="r"
+						key={index}
+						title={item.title}
+						thumbnail={item.thumbnail}
+						accent={item.accent}
 						link="#"
-					/>,
-					<CarouselItem
-						title="Slightly bigger title"
-						thumbnail="/images/thumb2.jpg"
-						accent="g"
-						link="#"
-					/>,
-					<CarouselItem
-						title="A really elaborate and massive title, you cannnot even comprehend how big it is"
-						thumbnail="/images/thumb3.png"
-						accent="b"
-						link="#"
-					/>,
-					<CarouselItem
-						title="Sample project"
-						thumbnail="/images/thumb3.png"
-						link="#"
-					/>,
-					<CarouselItem
-						title="Sample project"
-						thumbnail="/images/thumb3.png"
-						accent="b"
-						link="#"
-					/>,
-					<CarouselItem
-						title="Sample project"
-						thumbnail="/images/thumb.png"
-						accent="r"
-						link="#"
-					/>,
-					<CarouselItem
-						title="Slightly bigger title"
-						thumbnail="/images/thumb2.jpg"
-						accent="g"
-						link="#"
-					/>,
-					<CarouselItem
-						title="A really elaborate and massive title, you cannnot even comprehend how big it is"
-						thumbnail="/images/thumb3.png"
-						accent="b"
-						link="#"
-					/>,
-					<CarouselItem
-						title="Sample project"
-						thumbnail="/images/thumb3.png"
-						link="#"
-					/>,
-					<CarouselItem
-						title="Sample project"
-						thumbnail="/images/thumb3.png"
-						accent="b"
-						link="#"
-					/>,
-				]}
+					/>
+				))}
 			/>
 		</div>
 	);
