@@ -1,6 +1,7 @@
 import React from "react";
 import { useRef } from "react";
 import { useState } from "react";
+import { AiOutlineDown, AiOutlineClose } from "react-icons/ai";
 
 import styles from "./CollapsibleMultiColumnList.module.css";
 import utilStyles from "../styles/utils.module.css";
@@ -12,7 +13,7 @@ export default function MultiColumnList({ title, numCols, items }) {
     const listItems = items.map((item, ind) => <div key={ind}>{item}</div>);
     return (
         <div className={styles.listContainer}>
-            <div
+            <button
                 className={`${utilStyles.flex} ${styles.listTitle}`}
                 onClick={() => {
                     expand((prev) => !prev);
@@ -23,8 +24,8 @@ export default function MultiColumnList({ title, numCols, items }) {
                 >
                     {title}
                 </h1>
-                <h1>{expanded ? "X" : "V"}</h1>
-            </div>
+                <h1>{expanded ? <AiOutlineClose/> : <AiOutlineDown />}</h1>
+            </button>
 
             <div
                 ref={contentRef}

@@ -5,8 +5,9 @@
 :root {
 	/* Main colors */
 	--clr-dark: 218 13% 10%;
-	--clr-less-dark: 218 13% 20%;
+	--clr-less-dark: 218 23% 20%;
 	--clr-white: 0 0% 100%;
+    --clr-grey: 0 0% 70%;
 	--clr-light: 201 82% 78%;
 	--clr-accent-r: 0 73% 60%;
 	--clr-accent-g: 146 91% 60%;
@@ -27,9 +28,9 @@
 	--fs-300: 1rem;
 	--fs-200: 0.875rem;
 
-    --line-thick: 3px;
+	--line-thick: 3px;
 
-    --shadow-dark: 4px 4px hsl(var(--clr-dark));
+	--shadow-dark: 4px 4px hsl(var(--clr-dark));
 }
 
 /* -------------------------------- */
@@ -76,4 +77,13 @@ body {
 	color: hsl(var(--clr-white));
 	line-height: 1.5; /* slightly bigger than default */
 	min-height: 100vh; /* fills up entire screen for small pages */
+}
+
+@media (prefers-reduced-motion) {
+	* {
+		-webkit-transition: none !important;
+		-moz-transition: none !important;
+		-o-transition: none !important;
+		transition: none !important;
+	}
 }

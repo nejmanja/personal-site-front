@@ -1,7 +1,6 @@
 .mainNav {
 	display: flex;
 	align-items: center;
-	justify-content: space-between;
 	/* display: grid;
     place-items: center;
     
@@ -17,11 +16,22 @@
 	left: 0;
 }
 
+.hamburger {
+	display: none;
+}
+
 .logo {
 	height: 50px;
 	color: white;
 	justify-self: start;
-	padding-inline: 3rem 1rem;
+	padding-inline: 2.5rem;
+}
+
+.navButtons {
+	display: flex;
+	justify-content: space-between;
+	/* fill all space not filled by logo */
+	width: 100%;
 }
 
 .navButton {
@@ -31,6 +41,9 @@
 	padding-block: 1rem 0;
 	margin-inline: clamp(0.875rem, 2vw, 5rem);
 	text-decoration: none;
+}
+.leftContainer > .navButton:first-child {
+	margin-inline-start: 0;
 }
 
 .navButton::after {
@@ -42,7 +55,8 @@
 	transition: width 300ms ease-in-out;
 }
 
-.navButton:hover::after {
+.navButton:hover::after,
+.navButton:focus::after {
 	width: 100%;
 	border-bottom: 3px solid hsl(var(--clr-white));
 }
@@ -51,7 +65,8 @@
 	width: 100%;
 }
 
-.navButton_r:hover::after {
+.navButton_r:hover::after,
+.navButton_r:focus::after {
 	border-bottom: 3px solid hsl(var(--clr-accent-r));
 }
 .navButton_r.active::after {
@@ -59,7 +74,8 @@
 	width: 100%;
 }
 
-.navButton_g:hover::after {
+.navButton_g:hover::after,
+.navButton_g:focus::after {
 	border-bottom: 3px solid hsl(var(--clr-accent-g));
 }
 .navButton_g.active::after {
@@ -100,23 +116,69 @@
 	border-bottom: 3px solid hsl(var(--clr-light));
 }
 
-.contactButton:hover::after {
+.contactButton:hover::after,
+.contactButton:focus::after {
 	transform: scaleX(133%);
 	border-bottom: 3px solid hsl(var(--clr-light));
 }
 
 @media (max-width: 45em) {
-
 	.mainNav {
 		padding-block: 0.5rem;
+		flex-direction: column;
+		align-items: start;
 	}
 
-    .navButton,
-    .contactButton{
-        display: none;
-    }
+	.navButtons {
+		flex-direction: column;
+		padding-inline-start: 1rem;
+		overflow: hidden;
+		transition: height 400ms ease-in-out;
+	}
 
+	.leftContainer {
+		flex-direction: column;
+		justify-content: center;
+		align-items: start;
+	}
+
+	.navButton {
+		margin-inline: 0;
+	}
+
+	.contactButton {
+		width: max-content;
+	}
+
+	.contactButton::after {
+		transition: border-color 400ms;
+	}
+
+	.contactButton.active::after {
+		transform: scaleX(100%);
+	}
+	.contactButton:hover::after,
+	.contactButton:focus::after {
+		transform: scaleX(100%);
+	}
 	.logo {
 		height: 30px;
+		padding-inline: 0;
+		align-self: center;
+	}
+
+	.hamburger {
+		position: absolute;
+		display: block;
+		width: 50px;
+		height: 50px;
+		color: white;
+		background: none;
+		border: none;
+		padding: 0;
+		margin: 0;
+		top: 0;
+		left: 0;
+		z-index: 1002;
 	}
 }

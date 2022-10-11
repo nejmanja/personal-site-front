@@ -1,0 +1,14 @@
+.link {
+	text-decoration: none;
+	transition: color 300ms, transform 300ms;
+}
+
+.link:hover,
+.link:focus {
+	transform: scale(110%);
+}
+
+.socials {
+	width: 100%;
+	justify-content: space-between;
+}
