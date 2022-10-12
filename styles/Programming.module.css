@@ -1,0 +1,11 @@
+.programming{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    align-self: center;
+    width: 100%;
+
+    max-width: 80rem;
+    padding-inline: 2em;
+    margin-block: 7rem 2rem;
+}

@@ -1,0 +1,33 @@
+.card{
+    background-color: hsl(var(--clr-less-dark));
+    padding: 0.5rem;
+    height: 100%;
+}
+
+
+.imgContainer{
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    position: relative;
+    padding: 0;
+    margin: 0;
+}
+
+.imgContainer::after{
+    position: absolute;
+    z-index: 2;
+    content: '';
+    width: 20px;
+    transition: width 300ms ease-in-out;
+    border-bottom: 3px solid hsl(var(--clr-white));
+    bottom: 0;
+    left: 0;
+}
+
+.imgContainer:hover::after{
+    width: 100%;
+}
+
+.title{
+    margin-block-start: 0.5rem;
+}
