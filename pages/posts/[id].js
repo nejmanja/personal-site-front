@@ -2,12 +2,16 @@ import Image from "next/image";
 import styles from "../../styles/post.module.css";
 import utilStyles from "../../styles/utils.module.css";
 import PostBody from "../../components/PostBody";
+import Head from "next/head";
 import clientPromise from "../../lib/mongodb";
 import { ObjectId } from "mongodb";
 
 export default function Post({ post }) {
 	return (
 		<div className={styles.post}>
+			<Head>
+				<title>{post.title}</title>
+			</Head>
 			<div
 				className={`${styles.imgContainer} ${
 					post.categories.includes("programming") ? styles.accentR : ""

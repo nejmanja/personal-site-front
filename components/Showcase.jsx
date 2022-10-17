@@ -4,6 +4,7 @@ import CarouselItem from "./CarouselItem";
 import styles from "./Showcase.module.css";
 import utilStyles from "../styles/utils.module.css";
 import ScrollableList from "./ScrollableList";
+import PostList from "./PostList";
 
 const sampleProjects = [
 	{ title: "Sample project", thumbnail: "/images/thumb.png", accent: "r" },
@@ -23,7 +24,7 @@ const sampleProjects = [
 	{ title: "Sample project", thumbnail: "/images/thumb3.png", accent: "g" },
 ];
 
-export default function Showcase() {
+export default function Showcase({ posts }) {
 	return (
 		<div
 			className={`${styles.showcase} ${utilStyles.container} ${utilStyles.fullscreenPanel}`}
@@ -34,28 +35,7 @@ export default function Showcase() {
 				Still not convinced?
 			</h1>
 			<h2>Check out some of my past projects!</h2>
-			<ScrollableList
-				listItems={sampleProjects.map((item, index) => (
-					<CarouselItem
-						key={index}
-						title={item.title}
-						thumbnail={item.thumbnail}
-						accent={item.accent}
-						link="#"
-					/>
-				))}
-			/>
-			<ScrollableList
-				listItems={sampleProjects.map((item, index) => (
-					<CarouselItem
-						key={index}
-						title={item.title}
-						thumbnail={item.thumbnail}
-						accent={item.accent}
-						link="#"
-					/>
-				))}
-			/>
+			<PostList posts={posts} />
 		</div>
 	);
 }
