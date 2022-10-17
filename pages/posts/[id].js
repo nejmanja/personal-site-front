@@ -2,6 +2,8 @@ import Image from "next/image";
 import styles from "../../styles/post.module.css";
 import utilStyles from "../../styles/utils.module.css";
 import PostBody from "../../components/PostBody";
+import clientPromise from "../../lib/mongodb";
+import { ObjectId } from "mongodb";
 
 export default function Post({ post }) {
 	return (
@@ -33,35 +35,53 @@ export default function Post({ post }) {
 }
 
 export async function getStaticPaths() {
-	const res = await fetch("http://localhost:5000/posts/");
-	const posts = await res.json();
-	const paths = posts.map((post) => {
-		return { params: { id: post._id } };
-	});
+	try {
+		const client = await clientPromise;
+		const db = client.db("test");
 
-	return {
-		paths,
-		fallback: false,
-	};
+		const posts = await db.collection("posts").find({}).toArray();
+		const paths = posts.map((post) => {
+			return { params: { id: post._id.toString() } };
+		});
+
+		return {
+			paths,
+			fallback: false,
+		};
+	} catch (e) {
+		console.log(e);
+		return {
+			paths: [],
+			fallback: false,
+		};
+	}
 }
 
 export async function getStaticProps({ params }) {
-	const res = await fetch(`http://localhost:5000/posts/${params.id}`);
-	const post = await res.json();
+	try {
+		const client = await clientPromise;
+		const db = client.db("test");
 
-	const resCat = await fetch("http://localhost:5000/categories");
-	const cats = await resCat.json();
+		const post = await db
+			.collection("posts")
+			.findOne({ _id: ObjectId(params.id) });
+		const cats = await db.collection("categories").find({}).toArray();
 
-	// replace category ID with category name
-	for (let i = 0; i < post.categories.length; i++) {
-		cats.forEach((cat) => {
-			if (post.categories[i] === cat._id) post.categories[i] = cat.name;
-		});
+		const strPost = JSON.parse(JSON.stringify(post));
+		const strCats = JSON.parse(JSON.stringify(cats));
+
+		// replace category ids with their names
+		for (let i = 0; i < strPost.categories.length; i++) {
+			strCats.forEach((cat) => {
+				if (strPost.categories[i] === cat._id) strPost.categories[i] = cat.name;
+			});
+		}
+		return {
+			props: {
+				post: strPost,
+			},
+		};
+	} catch (e) {
+		console.log(e);
 	}
-
-	return {
-		props: {
-			post,
-		},
-	};
 }
