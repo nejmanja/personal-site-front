@@ -69,6 +69,18 @@
 	max-width: 80rem;
 }
 
+.postListContainer{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    align-self: center;
+    width: 100%;
+
+    max-width: 80rem;
+    padding-inline: 2em;
+    margin-block: 7rem 2rem;
+}
+
 .container_background {
 	background-color: hsl(var(--clr-light) / 0.1);
 	border-radius: 1rem;
