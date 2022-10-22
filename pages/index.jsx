@@ -27,7 +27,7 @@ export async function getStaticProps({ params }) {
 			.collection("posts")
 			.find({})
             .sort({index: -1})
-			.project({ title: 1, photo: 1, categories: 1, slug: 1 })
+			.project({ title: 1, photo: 1, categories: 1, slug: 1, fancyTitle: 1, thumbStyle: 1 })
             .limit(24)
 			.toArray();
 

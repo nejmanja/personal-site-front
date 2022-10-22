@@ -10,6 +10,10 @@ export default function Post({ post }) {
         <div className={styles.post}>
             <Head>
                 <title>{post.title}</title>
+                <meta
+                    property="og:image"
+                    content={`/api/og_post?title=${post.title}`}
+                />
             </Head>
             <div
                 className={`${styles.imgContainer} ${
@@ -19,11 +23,32 @@ export default function Post({ post }) {
                 } ${post.categories.includes("audio") ? styles.accentG : ""}
                 ${post.categories.includes("visual") ? styles.accentB : ""}`}
             >
-                <Image
-                    src={post.photo || "/images/thumb3.png"}
-                    layout="fill"
-                    objectFit="cover"
-                />
+                {post.photo ? (
+                    <Image src={post.photo} layout="fill" objectFit="cover" />
+                ) : (
+                    <div
+                        style={{
+                            ...post.thumbStyle,
+                            backgroundColor: "black",
+                            height: "100%",
+                            width: "100%",
+                            display: "flex",
+                            textAlign: "center",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            flexDirection: "column",
+                            position: "absolute",
+                            fontSize: "150%",
+                            fontStyle: "normal",
+                            letterSpacing: "-0.025em",
+                            color: "white",
+                            width: "100%",
+                            lineHeight: 1.4,
+                        }}
+                    >
+                        {post.fancyTitle}
+                    </div>
+                )}
             </div>
             <div className={styles.content}>
                 <h1

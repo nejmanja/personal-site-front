@@ -1,3 +1,7 @@
 .showcase{
     margin-block: 5rem;
 } 
+
+.subheading{
+    margin-block-end: 1rem;
+}

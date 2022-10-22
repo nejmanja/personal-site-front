@@ -22,8 +22,10 @@ export default function PostList({ posts }) {
         <PostCard
             key={post.slug}
             link={`/posts/${post.slug}`}
-            thumb={"/images/thumb3.png"}
+            thumb={post.photo}
             title={cutTitle(post.title)}
+            thumbTitle={post.fancyTitle}
+            thumbStyle={post.thumbStyle}
             categories={post.categories}
         />
     ));
