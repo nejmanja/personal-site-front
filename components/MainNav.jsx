@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { useState, useRef } from "react";
-import useWindowSize from "../utils/hooks/useWindowSize";
+import useWindowSize from "../lib/hooks/useWindowSize";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 
 import styles from "./MainNav.module.css";
@@ -35,8 +35,8 @@ export default function MainNav() {
             <a
                 className={`${linkStruct.accent} ${navButtonStyle} ${
                     linkStruct.path === "/"
-                        ? router.pathname === linkStruct.path && styles.active
-                        : router.pathname.indexOf(linkStruct.path) !== -1 &&
+                        ? router.asPath === linkStruct.path && styles.active
+                        : router.asPath.indexOf(linkStruct.path) !== -1 &&
                           styles.active
                 }`}
             >

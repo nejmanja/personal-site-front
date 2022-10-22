@@ -7,23 +7,18 @@ import utilStyles from "../styles/utils.module.css";
 import { useState } from "react";
 import { AiOutlineLoading } from "react-icons/ai";
 import Link from "next/link";
-import { useEffect } from "react";
+import useLoading from "../lib/hooks/useLoading";
 
 export default function PostCard({ title, thumb, categories, link }) {
 	const [hover, setHover] = useState(false);
 	const [active, setActive] = useState(false);
 	const [loading, setLoading] = useState(false);
-	const router = useRouter();
-
-	useEffect(() => {
-		const handleRouteChange = (url) => {
-			if (url === link) setLoading(true);
-		};
-		router.events.on("routeChangeStart", handleRouteChange);
-		return () => {
-			router.events.off("routeChangeStart", handleRouteChange);
-		};
-	}, []);
+    useLoading((url)=>{
+        if(url === link) setLoading(true);
+    },
+    ()=>{
+        setLoading(false);
+    });
 
 	return (
 		<Link href={link}>

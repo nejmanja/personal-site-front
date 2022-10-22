@@ -1,75 +1,94 @@
 .contactForm {
-	display: grid;
-	justify-items: center;
-	align-items: center;
-	grid-template-areas:
-		"name email"
-		"text text"
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-template-areas:
+        "name email"
+        "text text"
         "submit submit";
     gap: 1rem;
-	width: 100%;
-	height: 100%;
+    width: 100%;
+    height: 100%;
+    position: relative;
 }
 .label,
 .input {
-	width: 100%;
-	display: block;
+    width: 100%;
+    display: block;
 }
 
-.input{
+.input {
     background: none;
     border: none;
     border-bottom: 2px solid hsl(var(--clr-grey));
     color: hsl(var(--clr-white));
 }
-.input[error="true"]{
-    border-color: hsl(var(--clr-accent-r));
+.input[error="true"] {
+    border-color: hsl(var(--clr-accent-r) / 0.5);
 }
 
-.input:focus{
+.input:focus {
     border-color: hsl(var(--clr-white));
     outline: none;
 }
-.input:-webkit-autofill{
+
+.input[error="true"]:focus {
+    border-color: hsl(var(--clr-accent-r));
+}
+
+.input:-webkit-autofill {
     -webkit-box-shadow: 0 0 0 30px hsl(var(--clr-less-dark)) inset !important;
     -webkit-text-fill-color: hsl(var(--clr-light));
 }
 
 textarea.input {
-	resize: none;
+    resize: none;
     border: 2px solid hsl(var(--clr-grey));
 }
 
-.name{
+.name {
     grid-area: name;
 }
-.email{
+.email {
     grid-area: email;
 }
-.error{
+.error {
     position: absolute;
     font-size: 0.8rem;
     color: hsl(var(--clr-accent-r));
 }
 
-.textarea{
+.textarea {
     grid-area: text;
 }
-.submit{
-    grid-area: submit;
-}
 
-.submit{
+.submit {
+    grid-area: submit;
     background: none;
     border: none;
     border-bottom: var(--line-thick) solid hsl(var(--clr-light));
     transition: color 300ms ease-in-out, border-color 300ms ease-in-out;
-    
+
     padding: 0.5rem;
 }
 
 .submit:hover,
-.submit:focus{
+.submit:focus {
     color: hsl(var(--clr-white));
     border-color: hsl(var(--clr-white));
+}
+
+.submit_disabled {
+    grid-area: submit;
+    background: none;
+    border: none;
+    padding: 0.5rem;
+    padding-bottom: calc(0.5rem + var(--line-thick));
+
+    color: hsl(var(--clr-accent-g));
+}
+
+.statusError {
+    top: -7rem;
+    white-space: nowrap;
 }

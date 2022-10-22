@@ -26,7 +26,9 @@ export async function getStaticProps({ params }) {
 		const posts = await db
 			.collection("posts")
 			.find({})
-			.project({ title: 1, photo: 1, categories: 1 })
+            .sort({index: -1})
+			.project({ title: 1, photo: 1, categories: 1, slug: 1 })
+            .limit(24)
 			.toArray();
 
 		const cats = await db.collection("categories").find({}).toArray();
