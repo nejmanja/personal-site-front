@@ -18,12 +18,12 @@ export default function AboutMe() {
 				/>
 				<h1 className={headerStyle}>Who am I?</h1>
 				<div className={`${styles.text} ${utilStyles.flow}`}>
-					<p className={`${styles.desc} ${utilStyles.fs400}`}>
+					<p className={styles.desc}>
 						I&apos;m a computer science student with strong interests in
 						low-level programming, computer graphics, physics simulations,
 						digital signal processing and audio programming.
 					</p>
-					<p className={`${styles.tagline} ${utilStyles.fs400}`}>
+					<p className={styles.tagline}>
 						I strive towards making complex things feel intuitive.
 					</p>
 				</div>

@@ -1,6 +1,6 @@
 .card {
 	background-color: hsl(var(--clr-less-dark));
-	padding: 0.5rem;
+	padding: 0.25rem;
 	height: 100%;
 
 	text-decoration: none;
@@ -8,11 +8,11 @@
 }
 
 .imgContainer {
-	width: 100%;
-	aspect-ratio: 16 / 9;
+	aspect-ratio: 21 / 9;
 	position: relative;
 	padding: 0;
 	margin: 0;
+	width: 100%;
 }
 
 .imgContainer::after {
@@ -74,7 +74,9 @@
 }
 
 .title {
-	margin-block-start: 0.5rem;
+	margin: 0.25rem;
+	margin-block-end: 0;
+	font-size: var(--fs-400);
 }
 
 .loading {
@@ -99,5 +101,26 @@
 	}
 	100% {
 		transform: rotate(360deg);
+	}
+}
+
+@media (max-width: 45em) {
+	.title {
+		font-size: var(--fs-400);
+		margin-block: 0;
+		margin-inline: 0.5rem;
+		text-align: right;
+	}
+	.imgContainer {
+        width: revert;
+		height: 100%;
+        aspect-ratio: 4 / 3;
+	}
+
+	.card {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 0;
 	}
 }

@@ -2,12 +2,13 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     /* grid-auto-rows: max-content; */
-    gap: 1rem;
+    gap: 0.25rem;
 
 }
 
 @media (max-width: 45em) {
     .list{
         grid-template-columns: 1fr;
+        grid-auto-rows: 10vh;
     }
 }

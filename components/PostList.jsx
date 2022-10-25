@@ -2,6 +2,7 @@ import React from "react";
 import PostCard from "./PostCard";
 import Head from "next/head";
 import styles from "./PostList.module.css";
+import { useState } from "react";
 
 export default function PostList({ posts }) {
     const cutTitle = (title) => {
@@ -17,7 +18,6 @@ export default function PostList({ posts }) {
         }
         return title;
     };
-
     const cards = posts.map((post) => (
         <PostCard
             key={post.slug}
@@ -30,7 +30,7 @@ export default function PostList({ posts }) {
         />
     ));
     return (
-        <div className={`${styles.list}`}>
+        <div className={styles.list}>
             {cards}
         </div>
     );

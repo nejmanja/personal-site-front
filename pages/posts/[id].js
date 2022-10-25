@@ -12,7 +12,7 @@ export default function Post({ post }) {
                 <title>{post.title}</title>
                 <meta
                     property="og:image"
-                    content={`/api/og_post?title=${post.title}`}
+                    content={`https://nejmanja.vercel.app/api/og_post?title=${post.title}`}
                 />
             </Head>
             <div
