@@ -1,5 +1,6 @@
 .skillItem {
-	place-content: space-between;
+	justify-content: space-between;
+    align-items: center;
 }
 
 .skillsetTitle::after{
@@ -22,6 +23,8 @@
 }
 
 .skillsetHeader{
-    align-items: center;
     padding-block-end: 0.5rem;
+}
+.rating{
+    font-size: var(--fs-200);
 }

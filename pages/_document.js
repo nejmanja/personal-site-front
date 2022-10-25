@@ -14,6 +14,8 @@ export default function Document() {
                     href="https://fonts.googleapis.com/css2?family=Encode+Sans+Condensed:wght@400;700&family=Encode+Sans:wght@400;700&family=Trirong:wght@400;700&display=swap"
                     rel="stylesheet"
                 />
+                <meta name="theme-color" content="#16191d" />
+
             </Head>
             <body>
                 <Main />

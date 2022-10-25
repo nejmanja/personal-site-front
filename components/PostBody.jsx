@@ -18,7 +18,7 @@ export default function PostBody({ children }) {
 							customStyle={{
 								background: "hsl(var(--clr-less-dark))",
 								textShadow: "none",
-								fontSize: "var(--fs-300)",
+								fontSize: "var(--fs-200)",
 							}}
 							{...props}
 						/>
