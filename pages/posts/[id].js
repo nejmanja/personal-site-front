@@ -12,7 +12,7 @@ export default function Post({ post }) {
                 <title>{post.title}</title>
                 <meta
                     property="og:image"
-                    content={`https://nejmanja.vercel.app/api/og_post?title=${post.title}`}
+                    content={`/api/og_post?title=${post.title}`}
                 />
             </Head>
             <div
@@ -56,8 +56,8 @@ export default function Post({ post }) {
                 >
                     {post.title}
                 </h1>
-                <div className={`${styles.desc} ${utilStyles.fs400}`}>
-                    <PostBody>{post.desc}</PostBody>
+                <div className={`${styles.desc} ${utilStyles.fs300}`}>
+                    <PostBody>{post.body}</PostBody>
                 </div>
             </div>
         </div>

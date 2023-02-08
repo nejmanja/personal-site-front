@@ -1,12 +1,9 @@
 import React from "react";
-import PostCard from "./PostCard";
-import Head from "next/head";
+import PostCardCondensed from "./PostCardCondensed";
 import styles from "./PostList.module.css";
-import { useState } from "react";
 
 export default function PostList({ posts }) {
-    const cutTitle = (title) => {
-        const charLimit = 60;
+    const cutText = (title, charLimit) => {
         if (title.length > charLimit) {
             let cutTitle = title.substring(0, charLimit);
             cutTitle =
@@ -18,19 +15,21 @@ export default function PostList({ posts }) {
         }
         return title;
     };
+
     const cards = posts.map((post) => (
-        <PostCard
+        <PostCardCondensed
             key={post.slug}
             link={`/posts/${post.slug}`}
             thumb={post.photo}
-            title={cutTitle(post.title)}
+            title={cutText(post.title, 60)}
+            desc={cutText(post.desc, 300)}
             thumbTitle={post.fancyTitle}
             thumbStyle={post.thumbStyle}
             categories={post.categories}
         />
     ));
     return (
-        <div className={styles.list}>
+        <div className={`${styles.list}`}>
             {cards}
         </div>
     );

@@ -13,6 +13,11 @@ export default function PostIndex({ title, posts, current, total, baseLink }) {
             <Head>
                 <title>{title}</title>
             </Head>
+            <PostsNavigation
+                baseLink={baseLink}
+                currentPage={current}
+                totalPages={total}
+            />
             <PostList posts={posts} />
             <PostsNavigation
                 baseLink={baseLink}
