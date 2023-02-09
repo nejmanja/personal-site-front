@@ -1,16 +1,17 @@
+/* background section element */
 .aboutMe {
     background-color: hsl(var(--clr-less-dark));
     padding-block: 5rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    /* make section fill whole screen at minimum */
     min-height: 100vh;
 }
 
+/* actual content inside the section */
 .content {
+    /* responsive grid, see end */
     display: grid;
     grid-template-columns: 4fr 6fr;
-    grid-template-rows: max-content max-content max-content;
+    /* grid-template-rows: max-content max-content max-content; */
 
     grid-template-areas:
         "image title"
@@ -20,7 +21,6 @@
     align-items: start;
     justify-items: center;
     gap: 3em;
-
 }
 
 .title {
@@ -34,34 +34,23 @@
     object-fit: cover;
     border-radius: 50%;
     grid-area: image;
-    align-self: start;
-
     box-shadow: var(--shadow-dark);
 }
 
+/* description portion */
 .text {
     grid-area: content;
     text-align: justify;
-}
-
-.skills {
-    width: 100%;
-    grid-area: skills;
-    align-items: start;
-}
-.contact {
-    grid-area: contact;
 }
 .desc {
     text-indent: 2rem;
     font-size: var(--fs-500);
 }
-
 .tagline{
     margin-block-start: 0.5rem;
     font-size: var(--fs-500);
 }
-
+/* decorative line below tagline */
 .tagline::after {
     content: "";
     display: block;
@@ -72,6 +61,17 @@
     background-color: white;
 }
 
+/* dropdown menus */
+.skills {
+    width: 100%;
+    grid-area: skills;
+    align-items: start;
+}
+.contact {
+    grid-area: contact;
+}
+
+/* grid layout for smaller screens */
 @media (max-width: 45em) {
     .content {
         grid-template-columns: 20fr;

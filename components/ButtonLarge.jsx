@@ -4,6 +4,7 @@ import Link from "next/link";
 import styles from "./ButtonLarge.module.css";
 import utilStyles from "../styles/utils.module.css";
 
+// generic link button with custom text
 export default function ButtonLarge({ className, text, link, accent }) {
     return (
         <Link href={link}>

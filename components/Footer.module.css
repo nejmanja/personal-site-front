@@ -8,6 +8,7 @@
     line-height: 1;
 }
 
+/* line with gradient that appears as 3 distinct bars */
 .footer::before{
 	content: "";
     top: 0;

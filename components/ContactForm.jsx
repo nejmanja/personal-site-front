@@ -133,7 +133,11 @@ export default function ContactForm({ className }) {
                     utilStyles.uppercase
                 } ${utilStyles.fs400} ${utilStyles.textLight}`}
             />
-            {(mailStatus && mailStatus !== 200) && <p className={`${styles.error} ${styles.statusError}`}>An error occured while sending the email, please try again!</p>}
+            {mailStatus && mailStatus !== 200 && (
+                <p className={`${styles.error} ${styles.statusError}`}>
+                    An error occured while sending the email, please try again!
+                </p>
+            )}
         </form>
     );
 }
