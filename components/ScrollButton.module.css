@@ -1,0 +1,9 @@
+.scrollButton{
+    color: hsl(var(--clr-white)/.5);
+    font-size: 4rem;
+    transition: color 200ms;
+}
+
+.scrollButton:hover{
+    color: hsl(var(--clr-white));
+}

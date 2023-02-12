@@ -12,6 +12,12 @@
     
 }
 
+.scrollButton{
+    position: absolute;
+    bottom: 1rem;
+    z-index: 1;
+}
+
 .canvas::after{
     content: '';
     width: 100%;

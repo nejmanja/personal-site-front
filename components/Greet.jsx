@@ -3,31 +3,35 @@ import { useRef, useEffect, useState } from "react";
 
 import styles from "./Greet.module.css";
 import utilStyles from "../styles/utils.module.css";
+import ScrollButton from "./ScrollButton";
 
 function Box() {
     const ref = useRef();
 
     useFrame((state, delta) => (ref.current.rotation.x += 0.01));
 
-    const [mousePos, setMousePos] = useState({});
+    const [mousePos, setMousePos] = useState({ x: 0.5, y: 0.5 });
     useEffect(() => {
         const handleMouseMove = (event) => {
-          setMousePos({ x: event.clientX / window.innerWidth - 0.5, y: event.clientY / window.innerHeight - 0.5 });
-          console.log(event.clientX, event.clientY);
+            setMousePos({
+                x: event.clientX / window.innerWidth - 0.5,
+                y: event.clientY / window.innerHeight - 0.5,
+            });
         };
-    
-        window.addEventListener('mousemove', handleMouseMove);
-    
+
+        window.addEventListener("mousemove", handleMouseMove);
+
         return () => {
-          window.removeEventListener(
-            'mousemove',
-            handleMouseMove
-          );
+            window.removeEventListener("mousemove", handleMouseMove);
         };
-      }, []);    
+    }, []);
 
     return (
-        <mesh ref={ref} rotation={[45, 45, 0]} position={[-mousePos.x/3,mousePos.y/3,0]}>
+        <mesh
+            ref={ref}
+            rotation={[45, 45, 0]}
+            position={[-mousePos.x / 3, mousePos.y / 3, 0]}
+        >
             <icosahedronGeometry attach="geometry" args={[1.75, 0]} />
             <meshLambertMaterial
                 wireframe
@@ -52,10 +56,10 @@ export default function Greet() {
     const names = ["reader", "employer", "friend", "explorer", "world"];
     useEffect(() => {
         const interval = setInterval(() => {
-          setSeconds(seconds => (seconds + 1) % 5);
+            setSeconds((seconds) => (seconds + 1) % 5);
         }, 1000);
         return () => clearInterval(interval);
-      }, []);
+    }, []);
     return (
         <div
             className={`${utilStyles.flex} ${utilStyles.fullscreenPanel} ${styles.greet}`}
@@ -66,6 +70,7 @@ export default function Greet() {
                 Greetings, {names[seconds]}
             </h1>
             <Scene />
+            <ScrollButton className={styles.scrollButton} />
         </div>
     );
 }

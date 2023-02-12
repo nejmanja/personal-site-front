@@ -1,7 +1,8 @@
 /* background section element */
 .aboutMe {
     background-color: hsl(var(--clr-less-dark));
-    padding-block: 5rem;
+    padding-block-end: 5rem;
+    padding-block-start: 7rem;
     /* make section fill whole screen at minimum */
     min-height: 100vh;
 }
