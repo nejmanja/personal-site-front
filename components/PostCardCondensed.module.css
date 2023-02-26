@@ -41,16 +41,19 @@
 	left: 0;
 }
 
+/* every single combo of categories to give different gradients */
+/* single colors */
 .card.accentR::after {
 	background: hsl(var(--clr-accent-r));
 }
-
 .card.accentG::after {
 	background: hsl(var(--clr-accent-g));
 }
 .card.accentB::after {
 	background: hsl(var(--clr-accent-b));
 }
+
+/* combination of 2 colors */
 .card.accentR.accentG::after {
 	background: linear-gradient(
 		to right,
@@ -58,7 +61,6 @@
 		hsl(var(--clr-accent-g)) 50%
 	);
 }
-
 .card.accentR.accentB::after {
 	background: linear-gradient(
 		to right,
@@ -73,6 +75,8 @@
 		hsl(var(--clr-accent-b)) 50%
 	);
 }
+
+/* all 3 colors */
 .card.accentR.accentG.accentB::after {
 	background: linear-gradient(
 		to right,

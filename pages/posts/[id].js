@@ -27,6 +27,7 @@ export default function Post({ post }) {
                     <Image src={post.photo} layout="fill" objectFit="cover" />
                 ) : (
                     <div
+                        className={`${utilStyles.uppercase} ${utilStyles.bold}`}
                         style={{
                             ...post.thumbStyle,
                             backgroundColor: "black",
@@ -38,24 +39,19 @@ export default function Post({ post }) {
                             justifyContent: "center",
                             flexDirection: "column",
                             position: "absolute",
-                            fontSize: "150%",
                             fontStyle: "normal",
+                            fontSize: "4vw",
                             letterSpacing: "-0.025em",
                             color: "white",
                             width: "100%",
                             lineHeight: 1.4,
                         }}
                     >
-                        {post.fancyTitle}
+                        {post.fancyTitle + ' ' + post.title}
                     </div>
                 )}
             </div>
             <div className={styles.content}>
-                <h1
-                    className={`${styles.title} ${utilStyles.uppercase} ${utilStyles.bold} ${utilStyles.fs800}`}
-                >
-                    {post.title}
-                </h1>
                 <div className={`${styles.desc} ${utilStyles.fs300}`}>
                     <PostBody>{post.body}</PostBody>
                 </div>
