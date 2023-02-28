@@ -36,15 +36,17 @@ export default function PostBody({ children }) {
 					);
 				},
 				h1: ({ node, ...props }) => {
-					const idTag = props.children[0].toLowerCase().replace(" ", "_");
+                    // create tag for each level 1 heading from the text content, assumed all headings are unique
+					const idTag = props.children[0].toLowerCase().replaceAll(" ", "_");
 					return (
-						<a className={styles.link} href={`${router.asPath}#${idTag}`}>
+						<a className={styles.headingLink} href={`${router.asPath}#${idTag}`}>
 							<h1 id={idTag}>
 								{props.children[0]} <AiOutlineLink className={styles.icon} />
 							</h1>
 						</a>
 					);
 				},
+                a: ({node, ... props}) => <a target="_blank" className={styles.link} {...props}/>
 			}}
 		/>
 	);
